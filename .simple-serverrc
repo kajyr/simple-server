@@ -1,0 +1,10 @@
+{
+  "port": 7003,
+  "proxy": [
+    {
+      "protocol": "https:",
+      "hostname": "jsonplaceholder.typicode.com",
+      "prefix": "/todos"
+    }
+  ]
+}

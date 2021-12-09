@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const pgk = require("../package.json");
+const path = require("path");
+const server = require("../src/server");
+
+const conf = require("rc")(pgk.name, {
+  port: 7000,
+  publicPath: process.cwd(),
+  proxy: [],
+  verbose: true,
+});
+
+const [firstParam] = conf._;
+
+if (firstParam) {
+  conf.publicPath = firstParam;
+}
+
+// Resolve path
+conf.publicPath = path.resolve(conf.publicPath);
+
+server(conf);
