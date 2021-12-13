@@ -8,11 +8,14 @@
     "rc": "^1.2.8"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "@release-it/conventional-changelog": "^3.3.0",
+    "nodemon": "^2.0.6",
+    "release-it": "^14.11.8"
   },
   "scripts": {
     "start": "bin/kservez",
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "release": "release-it"
   },
   "keywords": [
     "http",
