@@ -1,6 +1,6 @@
 {
   "name": "kservez",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "server.ts",
   "author": "Carlo Panzi <carlo@uberresearch.com>",
   "license": "MIT",
