@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kajyr/kservez/compare/1.0.2...1.1.0) (2021-12-16)
+
+
+### Features
+
+* support for frontendRouting ([995ece6](https://github.com/kajyr/kservez/commit/995ece63d2ef0dc421d8380e52792f971cb43c0d))
+
 ## 1.0.2 (2021-12-13)
 
 
