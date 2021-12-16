@@ -8,6 +8,7 @@ const conf = require("rc")(pgk.name, {
   publicPath: process.cwd(),
   proxy: [],
   verbose: true,
+  frontendRouting: true, // Does not raise 404, but returns index.html
 });
 
 const [firstParam] = conf._;

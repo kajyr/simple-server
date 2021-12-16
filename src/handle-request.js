@@ -10,7 +10,7 @@ function handler(config) {
           return;
         }
       }
-      await handleStatic(request, response, config.publicPath);
+      await handleStatic(request, response, config);
     } catch (error) {
       console.error(error);
       response.writeHead(500, { "Content-Type": "application/json" });

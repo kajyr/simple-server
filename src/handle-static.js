@@ -1,4 +1,4 @@
-const { statSync, createReadStream } = require("fs");
+const { statSync, createReadStream, existsSync } = require("fs");
 const path = require("path");
 
 const mimeTypes = {
@@ -20,10 +20,14 @@ const mimeTypes = {
   ".wasm": "application/wasm",
 };
 
-async function handler(request, response, publicPath) {
-  let filePath = `${publicPath}${request.url}`;
+async function handler(request, response, config) {
+  let filePath = `${config.publicPath}${request.url}`;
   if (filePath.endsWith("/")) {
     filePath += "index.html";
+  }
+
+  if (!existsSync(filePath) && config.frontendRouting) {
+    filePath = `${config.publicPath}/index.html`;
   }
 
   const extname = path.extname(filePath).toLowerCase();

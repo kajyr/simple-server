@@ -6,5 +6,6 @@
       "hostname": "jsonplaceholder.typicode.com",
       "prefix": "/todos"
     }
-  ]
+  ],
+  "frontendRouting": true
 }
