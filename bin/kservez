@@ -48,4 +48,8 @@ if (firstParam) {
 // Resolve path
 conf.publicPath = path.resolve(conf.publicPath);
 
+// version and name
+conf.version = pgk.version;
+conf.name = pgk.name;
+
 server(conf);
