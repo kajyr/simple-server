@@ -9,6 +9,7 @@ const conf = require("rc")(pgk.name, {
   proxy: [],
   verbose: true,
   frontendRouting: true, // Does not raise 404, but returns index.html
+  ssl: false, // enables https server
 });
 
 const [firstParam] = conf._;

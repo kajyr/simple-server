@@ -5,6 +5,7 @@
   "author": "Carlo Panzi <carlo@uberresearch.com>",
   "license": "MIT",
   "dependencies": {
+    "node-forge": "^1.2.1",
     "rc": "^1.2.8"
   },
   "devDependencies": {

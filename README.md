@@ -22,3 +22,7 @@ A simple static http server and proxy
     ]
 }
 ```
+
+### Configuration options:
+
+- `ssl` - [boolean]: toggles http/https with a self signed certificate
