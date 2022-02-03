@@ -5,8 +5,8 @@
   "author": "Carlo Panzi <carlo@uberresearch.com>",
   "license": "MIT",
   "dependencies": {
-    "node-forge": "^1.2.1",
-    "rc": "^1.2.8"
+    "mclip": "^0.3.1",
+    "node-forge": "^1.2.1"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",

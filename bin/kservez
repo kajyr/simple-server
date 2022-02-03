@@ -2,17 +2,44 @@
 const pgk = require("../package.json");
 const path = require("path");
 const server = require("../src/server");
+const mclip = require("mclip");
+const { existsSync, readFileSync } = require("fs");
 
-const conf = require("rc")(pgk.name, {
+const confFile = path.join(process.cwd(), ".kserverzrc");
+
+function getFileConf() {
+  const exists = existsSync(confFile);
+  if (!exists) {
+    return {};
+  }
+  const str = readFileSync(confFile, "utf8");
+  return JSON.stringify(str);
+}
+
+const defaults = {
   port: 7000,
   publicPath: process.cwd(),
   proxy: [],
   verbose: true,
   frontendRouting: true, // Does not raise 404, but returns index.html
   ssl: false, // enables https server
+};
+
+const options = mclip(process.argv, {
+  ssl: { description: "Creates an https server" },
+  frontendRouting: {
+    description: "Leaves the routes to the frontend application",
+  },
+  port: { alias: "p", description: "Server port" },
 });
 
-const [firstParam] = conf._;
+const conf = {
+  ...defaults,
+  ...getFileConf(),
+  ...options,
+};
+
+const [firstParam] = conf.list;
 
 if (firstParam) {
   conf.publicPath = firstParam;
