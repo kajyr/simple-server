@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/kajyr/kservez/compare/1.1.0...1.2.0) (2022-02-04)
+
+
+### Features
+
+* https support ([0b0a937](https://github.com/kajyr/kservez/commit/0b0a937acc0ccf57ea82e02c8279e947adb5bd2c))
+
 # [1.1.0](https://github.com/kajyr/kservez/compare/1.0.2...1.1.0) (2021-12-16)
 
 
