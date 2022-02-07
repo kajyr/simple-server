@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/kajyr/kservez/compare/1.2.0...1.2.1) (2022-02-07)
+
+
+### Bug Fixes
+
+* Server port for ssl is read from the config ([5dbc094](https://github.com/kajyr/kservez/commit/5dbc094c51e838a9c3117c07c3f64107e887fc30)), closes [#1](https://github.com/kajyr/kservez/issues/1)
+
 # [1.2.0](https://github.com/kajyr/kservez/compare/1.1.0...1.2.0) (2022-02-04)
 
 
