@@ -5,7 +5,7 @@
   "author": "Carlo <carlo.panzi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "mclip": "^0.3.1",
+    "mclip": "^0.3.2",
     "node-forge": "^1.2.1"
   },
   "devDependencies": {

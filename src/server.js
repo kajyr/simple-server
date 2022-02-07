@@ -11,7 +11,9 @@ const init = function (config) {
   }
   try {
     if (config.ssl) {
-      https.createServer(createKeys(), handleRequest(config)).listen(443);
+      https
+        .createServer(createKeys(), handleRequest(config))
+        .listen(Number(config.port));
     } else {
       http.createServer(handleRequest(config)).listen(Number(config.port));
     }

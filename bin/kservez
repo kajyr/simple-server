@@ -30,7 +30,7 @@ const options = mclip(process.argv, {
   frontendRouting: {
     description: "Leaves the routes to the frontend application",
   },
-  port: { alias: "p", description: "Server port" },
+  port: { short: "p", description: "Server port" },
 });
 
 const conf = {
