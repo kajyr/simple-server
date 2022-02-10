@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/kajyr/kservez/compare/1.2.1...1.2.2) (2022-02-10)
+
+
+### Bug Fixes
+
+* Typos in config file reading fn ([8db9026](https://github.com/kajyr/kservez/commit/8db90267e7b311425d85862f54db6f4570ac425d))
+
 ## [1.2.1](https://github.com/kajyr/kservez/compare/1.2.0...1.2.1) (2022-02-07)
 
 
