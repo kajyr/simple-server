@@ -5,15 +5,18 @@ const server = require("../src/server");
 const mclip = require("mclip");
 const { existsSync, readFileSync } = require("fs");
 
-const confFile = path.join(process.cwd(), ".kserverzrc");
+const confFile = path.join(process.cwd(), ".kservezrc");
 
-function getFileConf() {
+function getFileConf(verbose) {
   const exists = existsSync(confFile);
   if (!exists) {
     return {};
   }
+  if (verbose) {
+    console.log("Using config file:", confFile, exists);
+  }
   const str = readFileSync(confFile, "utf8");
-  return JSON.stringify(str);
+  return JSON.parse(str);
 }
 
 const defaults = {
@@ -31,11 +34,12 @@ const options = mclip(process.argv, {
     description: "Leaves the routes to the frontend application",
   },
   port: { short: "p", description: "Server port" },
+  verbose: { short: "v", description: "Verbose" },
 });
 
 const conf = {
   ...defaults,
-  ...getFileConf(),
+  ...getFileConf(options.verbose),
   ...options,
 };
 
