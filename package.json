@@ -9,7 +9,7 @@
     "node-forge": "^1.2.1"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^4.1.0",
+    "@release-it/conventional-changelog": "^4.3.0",
     "nodemon": "^2.0.15",
     "release-it": "^14.14.3"
   },
