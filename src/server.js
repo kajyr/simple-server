@@ -9,24 +9,33 @@ const init = function (config) {
       console.log(...args);
     }
   }
-  try {
-    if (config.ssl) {
-      https
-        .createServer(createKeys(), handleRequest(config))
-        .listen(Number(config.port));
-    } else {
-      http.createServer(handleRequest(config)).listen(Number(config.port));
-    }
 
+  let server;
+
+  if (config.ssl) {
+    server = https
+      .createServer(createKeys(), handleRequest(config))
+      .listen(Number(config.port));
+  } else {
+    server = http
+      .createServer(handleRequest(config))
+      .listen(Number(config.port));
+  }
+
+  server.on("listening", function () {
     log("----");
     log(config.name, config.version);
     log("Serving", config.publicPath);
     log(`on ${config.ssl ? "https" : "http"}://localhost:${config.port}`);
     log();
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+  });
+
+  server.on("error", (e) => {
+    server.close();
+    throw e;
+  });
+
+  return server;
 };
 
 module.exports = init;

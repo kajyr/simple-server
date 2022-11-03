@@ -2,7 +2,7 @@
 const pgk = require("../package.json");
 const path = require("path");
 const server = require("../src/server");
-const mclip = require("mclip");
+const { mclip } = require("mclip");
 const { existsSync, readFileSync } = require("fs");
 
 const confFile = path.join(process.cwd(), ".kservezrc");
@@ -56,4 +56,9 @@ conf.publicPath = path.resolve(conf.publicPath);
 conf.version = pgk.version;
 conf.name = pgk.name;
 
-server(conf);
+try {
+  server(conf);
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
