@@ -56,4 +56,9 @@ conf.publicPath = path.resolve(conf.publicPath);
 conf.version = pgk.version;
 conf.name = pgk.name;
 
-server(conf);
+try {
+  server(conf);
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
