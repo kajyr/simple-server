@@ -1,5 +1,7 @@
 # kservez
 
+[![test](https://github.com/kajyr/kservez/actions/workflows/test.yml/badge.svg)](https://github.com/kajyr/kservez/actions/workflows/test.yml)
+
 A simple static http server and proxy
 
 ## Configuration
